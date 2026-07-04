@@ -2,7 +2,7 @@
 
 Developers: Dan and Sean
 
-Arc is a browser-based NSW HSC mathematics study app. The current prototype includes the Abbotsleigh 2025 Extension 1 and Ascham 2024 Advanced trial papers, timed attempts, self-marking, selective mistake-bank practice, persistent attempt history, and NESA-aligned progress mapping.
+Arc is a browser-based NSW HSC mathematics study app. The current prototype includes the Abbotsleigh 2025 Extension 1, Ascham 2024 Advanced, and Sydney Grammar 2025 Standard 2 trial papers, timed attempts, self-marking, selective mistake-bank practice, persistent attempt history, and course-separated NESA progress mapping.
 
 ## Run locally
 

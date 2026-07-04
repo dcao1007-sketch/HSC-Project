@@ -40,3 +40,25 @@ test('question bank supports item and topic selection',()=>{
   assert.match(source,/data-select-topic/);
   assert.match(source,/data-shuffle-selected/);
 });
+
+test('Sydney Grammar Standard 2 schema totals 100 marks',()=>{
+  const block=source.match(/const grammarMarkingSchema=\[(.*?)\n\];/s)?.[1]??'';
+  const explicit=[...block.matchAll(/q:\d+,total:(\d+)/g)].map(match=>Number(match[1]));
+  assert.equal(15+explicit.reduce((sum,value)=>sum+value,0),100);
+  assert.match(source,/sydney-grammar-2025-standard-2-trial\.pdf/);
+  assert.match(source,/sydney-grammar-2025-standard-2-solutions\.pdf/);
+});
+
+test('statistics and syllabus results are filtered by course',()=>{
+  assert.match(source,/attemptCourse\(attempt\)===state\.statsCourse/);
+  assert.match(source,/data-stats-course/);
+  assert.match(source,/Results never mix across Standard, Advanced or Extension courses/);
+});
+
+test('bank questions can be removed and paper details show attempt history',()=>{
+  assert.match(source,/data-remove-bank/);
+  assert.match(source,/actionToast\('Question removed from your bank\.'/);
+  assert.match(source,/Question restored\./);
+  assert.match(source,/function paperAttemptHistory/);
+  assert.match(source,/Past attempts/);
+});
