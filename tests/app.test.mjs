@@ -57,6 +57,8 @@ test('statistics and syllabus results are filtered by course',()=>{
 
 test('bank questions can be removed and paper details show attempt history',()=>{
   assert.match(source,/data-remove-bank/);
+  assert.match(source,/actionToast\('Question removed from your bank\.'/);
+  assert.match(source,/Question restored\./);
   assert.match(source,/function paperAttemptHistory/);
   assert.match(source,/Past attempts/);
 });
