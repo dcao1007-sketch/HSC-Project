@@ -6,7 +6,20 @@ Arc is a browser-based NSW HSC mathematics study app. The current prototype incl
 
 ## Run locally
 
-Open `index.html` in a browser. No installation or build step is required.
+Install Node.js 18 or newer, then run `npm install` and `npm run dev`. Use `npm test` for the zero-dependency project checks and `npm run build` before a release.
+
+## Project map
+
+- `app.js`, `styles.css`, `index.html`: current web prototype
+- `assets/papers`: licensed/source paper and solution files
+- `tests`: automated content and regression checks
+- `docs/product`: user problem, scope and success measures
+- `docs/business`: customers, positioning and revenue assumptions
+- `docs/engineering`: architecture and data model
+- `docs/content`: paper ingestion and quality-control workflow
+- `docs/testing`: release test strategy
+- `docs/legal`: copyright, privacy and AI safeguards
+- `docs/operations`: roadmap, ownership and release process
 
 ## Working together
 
