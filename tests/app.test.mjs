@@ -62,3 +62,16 @@ test('bank questions can be removed and paper details show attempt history',()=>
   assert.match(source,/function paperAttemptHistory/);
   assert.match(source,/Past attempts/);
 });
+
+test('overview uses the profile goal and weekly paper target',()=>{
+  assert.match(source,/Your main goal/);
+  assert.match(source,/function weeklyPlan/);
+  assert.match(source,/state\.profile\.weekly/);
+});
+
+test('library supports searching, filtering and private PDF uploads',()=>{
+  assert.match(source,/Search school, year, course or topic/);
+  assert.match(source,/data-upload-form/);
+  assert.match(source,/accept="application\/pdf/);
+  assert.match(source,/api\/papers\/import/);
+});
