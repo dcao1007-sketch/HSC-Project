@@ -73,5 +73,17 @@ test('library supports searching, filtering and private PDF uploads',()=>{
   assert.match(source,/Search school, year, course or topic/);
   assert.match(source,/data-upload-form/);
   assert.match(source,/accept="application\/pdf/);
-  assert.match(source,/api\/papers\/import/);
+  assert.match(source,/arc-private-papers/);
+});
+
+test('students can manually build and persist a complete private paper',()=>{
+  assert.match(source,/Private paper builder/);
+  assert.match(source,/name="solutions"/);
+  assert.match(source,/name="questionText"/);
+  assert.match(source,/name="solutionText"/);
+  assert.match(source,/name="questionPage"/);
+  assert.match(source,/name="solutionPage"/);
+  assert.match(source,/function paperDatabase/);
+  assert.match(source,/arc-private-papers/);
+  assert.match(source,/Paper saved with/);
 });
