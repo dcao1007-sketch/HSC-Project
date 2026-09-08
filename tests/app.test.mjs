@@ -87,3 +87,17 @@ test('students can manually build and persist a complete private paper',()=>{
   assert.match(source,/arc-private-papers/);
   assert.match(source,/Paper saved with/);
 });
+
+test('a new student starts with no name, goal or focus areas',()=>{
+  const block=source.match(/const defaultProfile=\{(.*?)\};/s)?.[1]??'';
+  assert.match(block,/name:''/);
+  assert.match(block,/goal:''/);
+  assert.match(block,/focus:\[\]/);
+  assert.doesNotMatch(source,/Daniel Cao/);
+});
+
+test('the sidebar streak is calculated from attempt history, not hardcoded',()=>{
+  assert.match(source,/function studyStreak/);
+  assert.match(source,/streak=studyStreak\(\)/);
+  assert.doesNotMatch(source,/<strong>6 days<\/strong>/);
+});
